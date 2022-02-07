@@ -1,0 +1,1762 @@
+@import './classNames';
+@import './mixins';
+
+//================== PDP Styles ==================//
+#{$pdpModalBlock}{
+    max-width: 1050px;
+    min-width: 1050px;
+    @include margin(0, auto, 30px, auto);
+    @include media_query("1201","max"){
+        @include margin(0, auto, 50px, 20px);
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+            @include margin(0, auto, 50px, auto);
+        }
+    }
+    @include media_query("769","max"){
+        max-width: 100%;
+        min-width: auto;
+        @include margin(0,20px,20px,20px);
+    }
+    #{$pdpModalTitleBlock}{
+        @include padding(5px ,0px, 10px, 0px);
+        #{$pdpModalTitleTextBlock}{
+            #{$pdpModalTitleText}{
+                font-weight: bold;
+                // opacity: 0.7;
+                color: #444444;
+                @include font-size(18px);
+                @include media_query("769","max"){
+                @include font-size(30px);
+                }
+            }
+        }
+        #{$pdpModalTitleImgBlock}{
+            #{$pdpModalTitleImg}{
+
+            }
+        }
+    }
+    #{$pdpModalBundleBlock}{
+        @include flexbox();
+        @include flex-wrap(wrap);
+        @include justify-content(flex-start);
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+            // @include justify-content(space-around);
+        }
+        @supports (-ms-ime-align: auto) {
+            // @include justify-content(space-around);
+        }
+        @include media_query("769","max"){
+            display: block;
+        }
+        @include media_query("600","max"){
+            @include padding(0px,0px,10px,0px);
+        }
+        #{$pdpModalMainProductBlock}{
+            @include media_query("769","max"){
+                @include margin(null,null,50px,null);
+            }
+            #{$productBlock}{
+                border: 1px solid #ddd;
+                max-width: 230px;
+                min-width: 230px;
+                @include height_width(auto, 100%);
+                @include padding(15px,10px,10px,10px);
+                position: relative;
+                @include media_query("769","max"){
+                    max-width: 100%;
+                    @include height_width(auto, auto);
+                    @include padding(20px,20px,20px,20px);
+                    @include flexbox();
+                    @include justify-content(flex-start);
+                }
+                #{$productImgBlock}{
+                    #{$productImg}{
+                        @include height_width(auto, 185px);
+                        @include margin(10px,auto,5px,auto);
+                        @include media_query("769","max"){
+                             @include height_width(auto, 250px);
+                             @include margin(0px,20px,0px,0px);
+                             
+                        }
+                        @include media_query("480","max"){
+                            @include height_width(auto, 250px);
+                            @include margin(0px,20px,0px,0px);
+                            
+                       }
+                        img{
+                            @include height_width(100%,100%);
+                        }
+                    }
+                }
+                #{$productDescBlock}{
+                    @include padding(15px,0px,0px,0px);
+                    @include media_query("769","max"){
+                        @include padding(0px,0px,0px,0px);
+                        width: 100%;
+                    }
+                    #{$productTitleBlock}{
+                        #{$productTitleTextBlock}{
+                            @include height_width(53px,null);
+                            overflow:hidden;
+                            @include media_query("769","max"){
+                                @include height_width(85px,null);
+                            }
+                            #{$productTitleText}{
+                                a{
+                                    @include font-size(15px);
+                                    line-height:1.2;
+                                    color: #444444;
+                                    font-weight: 300;
+                                    text-decoration: none;
+                                    // @include media_query("1201","max"){
+                                    //     @include font-size(16px);
+                                    // }
+                                    @include media_query("769","max"){
+                                        @include font-size(25px);
+                                    }
+                                    // &:hover{
+                                    //     text-decoration: underline;
+                                    // }
+    
+                                //     @include media_query("600","max"){
+                                //          @include font-size(15px);
+                                //     }
+                                //     @include media_query("375","max"){
+                                //         @include font-size(14px);
+                                //    }
+                                }
+                            }
+                        }
+                    }
+                    #{$productPriceBlock}{
+                        @include padding(5px,0px,20px,0px);
+                        @include media_query("480","max"){
+                            @include padding(10px,0px,10px,0px);
+                        }
+                        #{$productPriceActiveBlock}{
+                            #{$productPriceActiveTextBlock}{
+                                #{$productPriceActiveText}{
+                                    @include font-size(19px);
+                                    color: #D63F0A;
+                                    font-weight: 300;
+                                    @include media_query("769","max"){
+                                        @include font-size(30px);
+                                    }
+                                }
+                                #{$productPriceActiveTextMsg}{
+                                    background: #822980;
+                                    color: #fff;
+                                    text-transform: uppercase;
+                                    font-weight: bold;
+                                    font-size: 12px;
+                                    text-align: right;
+                                    @include height_width(35px,130px);
+                                    @include positioning(absolute,null,0,78px,null);
+                                    @include padding(2px,10px,2px,20px);
+                                    &::before{
+                                        content: '';
+                                        position: absolute;
+                                        border-bottom: 35px solid #fff;
+                                        border-right: 15px solid transparent;
+                                        left: 0px;
+                                        @include media_query("1201","max"){
+                                            left: -1px;
+                                            top: -1px;
+                                            border-bottom: 38px solid #fff;
+                                        }
+                                        @include media_query("769","max"){
+                                            border-bottom: 60px solid #fff;
+                                            left: -1px;
+                                            top: -1px;
+                                        }
+                                    }
+                                    span{
+                                        font-weight: 300 !important;
+                                    }
+                                    @include media_query("769","max"){
+                                        // display: none;
+                                        @include positioning(absolute,null,0,100px,null);
+                                         @include padding(2px,15px,2px,25px);
+                                        font-size: 20px;
+                                        @include height_width(55px,200px);
+                                        font-weight: 300;
+                                    }
+                                }
+                            }
+                        }
+                        #{$productPriceRegularBlock}{
+                            #{$productPriceRegularTextBlock}{
+                                @include height_width(16px,null);
+                                @include padding(0px,0px,5px,0px);
+                                @include media_query("769","max"){
+                                    @include height_width(30px,null);
+                                }
+                                #{$productPriceRegularText}{
+                                    text-decoration: line-through;
+                                    @include font-size(14px);
+                                    // opacity: 0.8;
+                                    color: #666;
+                                    @include media_query("769","max"){
+                                        @include font-size(25px);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    #{$productAddBlock}{
+                        @include flexbox();
+                        @include justify-content(center);
+                        @include align-items(center);
+                        @include padding(0px,0px,5px,0px);
+                        // @include flex-direction(row-reverse);
+                        @include height_width(null,70%);
+                        @include margin(0,auto,0,auto);
+                        @include media_query("769","max"){
+                           @include justify-content(flex-start);
+                           @include height_width(null,60%);
+                           @include margin(0,auto,0,0);
+                       }
+                        #{$productAddTextBlock}{
+                            #{$productAddText}{
+                                color: #424242;
+                                @include padding(0px,0px,0px,5px);
+                                @include height_width(null,110px);
+                                font-weight: 300;
+                                @include media_query("769","max"){
+                                    @include font-size(25px);
+                                    @include height_width(null,170px);
+                                }
+                                
+                            }
+                        }
+                        #{$productAddImgBlock}{
+                            border: 1px solid $grey;
+                            cursor: pointer;
+                            @include padding(3px, 3px, 3px, 3px);
+                            #{$productAddImg}{
+                                background: #0099d8 url(../img/icon_set.png) 1px -88px;
+                                @include height_width(30px,30px);
+                                transition: 0.5s all;
+                                background-size: 60px;
+                                background-repeat: no-repeat;
+                                @include media_query("769","max"){
+                                    @include height_width(40px,40px);
+                                    background: #0099d8 url(../img/icon_set.png) 2px -120px;
+                                    background-size: 80px;
+                                }
+                                &.checked{
+                                    background: #0099d8 url(../img/icon_set.png) 2px -114px;
+                                    background-repeat: no-repeat;
+                                    @include media_query("769","max"){
+                                        background: #0099d8 url(../img/icon_set.png)  3px -153px;
+                                        background-size: 80px;
+                                        background-repeat:no-repeat;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #{$pdpModalAddIconBlock}{
+            #{$pdpAddIconImgBlock}{
+                @include height_width(null,100px);
+                @include positioning(relative,null,null,null,null);
+                // @include media_query("1025","max"){
+                //     @include height_width(null,50px);
+                // }
+                @include media_query("769","max"){
+                    @include height_width(null,auto);
+                }
+                #{$pdpAddIconImg}{
+                    background: transparent url(../img/icon_set.png) 2px 1px;
+                    @include height_width(30px,30px);
+                    @include positioning(absolute,80px,30%,null,null);
+                    background-size: 40px;
+                    // @include media_query("1025","max"){
+                    //     @include positioning(absolute,80px,10px,null,null);
+                    // }
+                    @include media_query("769","max"){
+                        @include margin(2px,auto,2px,auto);
+                        @include positioning(absolute,-42px,49%,null,null);
+                    }
+                }
+            }
+        }
+        #{$pdpModalBundleProductBlock}{
+            @include positioning(relative,null,null,null,null);
+            max-width: 720px;
+            @include media_query("769","max"){
+                max-width: 100%;
+            }
+            #{$pdpBundleProductLeftBtnBlock}{
+                #{$pdpBundleProductLeftBtnImgBlock}{
+                    #{$pdpBundleProductLeftBtnImg}{
+                        @include height_width(40px,40px);
+                        @include positioning(absolute,40%, null,null,-16px);
+                        border-radius: 20px;
+                        background: $secondary_cta url(../img/icon_set.png) 9px -24px;
+                        z-index: 1;
+                        background-size: 42px;
+                        background-repeat: no-repeat;
+                        cursor: pointer;
+                        @include media_query("769","max"){
+                            display: none;
+                        }
+                    }
+                }
+            }
+            #{$pdpBundleProductListBlock}{
+                @include flexbox();
+                @include justify-content(flex-start);
+                max-width: 720px;
+                overflow: hidden;
+                @include height_width(auto,100%);
+                @include media_query("769","max"){
+                    display: block;
+                    max-width: 100%;
+                    @include height_width(auto, auto);
+                    overflow-x: inherit;
+                }
+                #{$productBlock}{
+                    border: 1px solid #ddd;
+                    max-width: 230px;
+                    min-width: 230px;
+                    @include height_width(auto, auto);
+                    @include padding(15px,10px,10px,10px);
+                    position: relative;
+                    @include margin(0px,5px,0px,5px);
+                    @include media_query("769","max"){
+                        max-width: 100%;
+                        @include flexbox();
+                        @include justify-content(flex-start);
+                        @include margin(0px,0px,20px,0px);
+                        @include padding(20px,20px,20px,20px);
+
+                    }
+                    #{$productImgBlock}{
+                        #{$productImg}{
+                            @include height_width(auto, 185px);
+                            @include margin(10px,auto,5px,auto);
+                            @include media_query("769","max"){
+                                @include height_width(auto, 250px);
+                                @include margin(0px,20px,0px,0px);
+                           }
+                           @include media_query("480","max"){
+                               @include height_width(auto, 250px);
+                               @include margin(0px,20px,0px,0px);
+                            }
+                            img{
+                                @include height_width(100%,100%);
+                            }
+                        }
+                    }
+                    #{$productDescBlock}{
+                        @include padding(15px,0px,0px,0px);
+                        @include media_query("769","max"){
+                            @include padding(0px,0px,0px,0px);
+                            width: 100%;
+                        }
+                        #{$productTitleBlock}{
+                            #{$productTitleTextBlock}{
+                                @include height_width(53px,null);
+                                overflow:hidden;
+                                @include media_query("769","max"){
+                                    @include height_width(85px,null);
+                                }
+                                #{$productTitleText}{
+                                    a{
+                                        @include font-size(15px);
+                                        line-height:1.2;
+                                        color: #444444;
+                                        font-weight: 300;
+                                        text-decoration: none;
+                                        // @include media_query("1201","max"){
+                                        //     @include font-size(16px);
+                                        // }
+                                        @include media_query("769","max"){
+                                            @include font-size(25px);
+                                        }
+                                        // &:hover{
+                                        //     text-decoration: underline;
+                                        // }
+                                    //     @include media_query("600","max"){
+                                    //         @include font-size(15px);
+                                    //    }
+                                    //    @include media_query("375","max"){
+                                    //        @include font-size(14px);
+                                    //     }
+                                    }
+                                }
+                            }
+                        }
+                        #{$productPriceBlock}{
+                            @include padding(5px,0px,20px,0px);
+                            @include media_query("480","max"){
+                                @include padding(10px,0px,10px,0px);
+                            }
+                            #{$productPriceActiveBlock}{
+                                #{$productPriceActiveTextBlock}{
+                                    #{$productPriceActiveText}{
+                                        @include font-size(19px);
+                                        color: #D63F0A;
+                                        font-weight: 300;
+
+                                        @include media_query("769","max"){
+                                            @include font-size(30px);
+                                        }
+                                    }
+                                    #{$productPriceActiveTextMsg}{
+                                        background: #822980;
+                                        color: #fff;
+                                        text-transform: uppercase;
+                                        font-weight: bold;
+                                        text-align: right;
+                                        font-size: 12px;
+                                        @include height_width(35px,130px);
+                                        @include positioning(absolute,null,0,78px,null);
+                                        @include padding(2px,10px,2px,20px);
+                                        &::before{
+                                            content: '';
+                                            position: absolute;
+                                            border-bottom: 35px solid #fff;
+                                            border-right: 15px solid transparent;
+                                            left: 0px;
+                                            @include media_query("1201","max"){
+                                                left: -1px;
+                                                top: -1px;
+                                                border-bottom: 38px solid #fff;
+                                            }
+                                            @include media_query("769","max"){
+                                                border-bottom: 60px solid #fff;
+                                            }
+                                        } 
+                                        span{
+                                            font-weight: 300 !important;
+                                        }
+                                        @include media_query("769","max"){
+                                            // display: none;
+                                            @include positioning(absolute,null,0,100px,null);
+                                             @include padding(2px,15px,2px,25px);
+                                            font-size: 20px;
+                                            @include height_width(55px,200px);
+                                            font-weight: 300;
+                                        }
+                                    }
+                                }
+                            }
+                            #{$productPriceRegularBlock}{
+                                #{$productPriceRegularTextBlock}{
+                                    @include height_width(16px,null);
+                                    @include padding(0px,0px,5px,0px);
+                                    @include media_query("769","max"){
+                                        @include height_width(30px,null);
+                                    }
+                                    #{$productPriceRegularText}{
+                                        text-decoration: line-through;
+                                        @include font-size(14px);
+                                        // opacity: 0.8;
+                                        color: #666;
+                                        @include media_query("769","max"){
+                                            @include font-size(25px);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        #{$productAddBlock}{
+                            @include flexbox();
+                            @include justify-content(center);
+                            @include align-items(center);
+                            @include padding(0px,0px,5px,0px);
+                            // @include flex-direction(row-reverse);
+                            @include height_width(null,70%);
+                            @include margin(0,auto,0,auto);
+                            @include media_query("769","max"){
+                                @include justify-content(flex-start);
+                                @include height_width(null,60%);
+                                @include margin(0,auto,0,0);
+                            }
+                            #{$productAddTextBlock}{
+                                #{$productAddText}{
+                                    color: #424242;
+                                    @include padding(0px,0px,0px,5px);
+                                    @include height_width(null,110px);
+                                    font-weight: 300;
+                                    @include media_query("769","max"){
+                                        @include font-size(25px);    
+                                        @include height_width(null,170px);
+                                    }
+                                }
+                            }
+                            #{$productAddImgBlock}{
+                                border: 1px solid $grey;
+                                cursor: pointer;
+                                @include padding(3px, 3px, 3px, 3px);
+                                #{$productAddImg}{
+                                    background: #0099d8 url(../img/icon_set.png) 1px -88px;
+                                    @include height_width(30px,30px);
+                                    background-size: 60px;
+                                    background-repeat: no-repeat;
+                                    transition: 0.5s all;
+                                    @include media_query("769","max"){
+                                        @include height_width(40px,40px);
+                                        background: #0099d8 url(../img/icon_set.png) 2px -119px;
+                                        background-size: 80px;
+                                    }
+                                    &.checked{
+                                        background: #0099d8 url(../img/icon_set.png) 1px -114px;
+                                        background-repeat:no-repeat;
+                                        @include media_query("769","max"){
+                                            background: #0099d8 url(../img/icon_set.png)  3px -152px;
+                                            background-size: 80px;
+                                            background-repeat: no-repeat;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            #{$pdpBundleProductRightBtnBlock}{
+                #{$pdpBundleProductRightBtnImgBlock}{
+                    #{$pdpBundleProductRightBtnImg}{
+                        @include height_width(40px,40px);
+                        @include positioning(absolute,40%, -16px, null,null);
+                        border-radius: 20px;
+                        background: $secondary_cta url(../img/icon_set.png) -13px -24px;
+                        z-index: 1;
+                        background-size: 42px;
+                        background-repeat: no-repeat;
+                        cursor: pointer;
+                        @include media_query("769","max"){
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        #{$pdpModalBundleCartBlock}{
+            @include flexbox();
+            @include justify-content(flex-end);
+            @include margin(20px,null,null,null);
+            @include padding(5px,0px,5px,5px);
+            border-top: 1px solid #ddd;
+            background: #fff;
+            flex-basis: 100%;
+            @include media_query("769","max"){
+                display: block;
+                border-top: none;
+                @include positioning(sticky,auto,0,0,0);
+                position: -webkit-sticky;
+                position: -moz-sticky;
+                position: -ms-sticky;
+                position: -o-sticky;
+                // @include height_width(auto,100%);
+                // @include margin(0px,0px,0px,0px);
+                z-index: 99;
+                @include padding(10px,10px,10px,10px);
+
+            }
+            #{$pdpBundleCartSummaryBlock}{
+                @include flexbox();
+                @include align-items(center);
+                // @include margin(0px,20px,0px,0px);
+                @include media_query("769","max"){
+                    @include justify-content(space-between);
+                    @include margin(5px,null,null,null);
+                    @include flex-wrap(wrap);
+                }
+                #{$pdpBundleCartSummaryTitleBlock}{
+                    @include margin(15px,20px,0px,0px);
+                    @include media_query("769","max"){
+                        @include margin(0px,0px,0px,0px);
+                    }
+                    #{$pdpBundleCartSummaryTitleTextBlock}{
+                        #{$pdpBundleCartSummaryTitleText}{
+                            @include font-size(18px);
+                            // font-weight: bold;
+                            color: #494949;
+                            @include media_query("769","max"){
+                                @include font-size(30px);
+
+                            }
+                            // @include media_query("375","max"){
+                            //     @include font-size(15px);
+                            // }
+                        }
+                    }
+                }
+                #{$pdpBundleCartSummaryPriceBlock}{
+                    @include margin(null,20px,null,null);
+                    @include media_query("769","max"){
+                        @include flexbox();
+                        @include align-items(center);
+                        @include height_width(auto,50%);
+                        @include justify-content(space-between);
+                    }
+                    #{$pdpBundleCartSummaryPriceRegularBlock}{
+                        #{$pdpBundleCartSummaryPriceRegularTextBlock}{
+                            #{$pdpBundleCartSummaryPriceRegularText}{
+                                text-decoration: line-through;
+                                // opacity: 0.7;
+                                color: #666;
+                                @include font-size(12px);
+                                @include media_query("769","max"){
+                                    @include font-size(25px);
+                                }
+                            }
+                        }
+                    }
+                    #{$pdpBundleCartSummaryPriceActiveBlock}{
+                        #{$pdpBundleCartSummaryPriceActiveTextBlock}{
+                            #{$pdpBundleCartSummaryPriceActiveText}{
+                                @include font-size(25px);
+                                color: #D7410B;
+                                @include media_query("769","max"){
+                                    @include font-size(35px);
+
+                                }
+                                // @include media_query("375","max"){
+                                //     @include font-size(20px);
+                                // }
+                            }
+                        }
+                    }
+                }
+                #{$pdpBundleCartSummaryAddBlock}{
+                    @include media_query("769","max"){
+                        flex-basis: 100%;
+                    }
+                    #{$pdpBundleCartSummaryAddBtnBlock}{
+                        cursor: pointer;
+                        @include height_width(auto,280px);
+                        background: #D7410B;
+                        @include text-center(center);
+                        @include margin(15px,null,null,null);
+                        &:hover{
+                            background:#C1401A;
+                        }
+                        @include media_query("769","max"){
+                            @include height_width(auto,100%);
+                        }
+                        #{$pdpBundleCartSummaryAddBtnTextBlock}{
+                            #{$pdpBundleCartSummaryAddBtnText}{
+                                text-transform: uppercase;
+                                color: #fff;
+                                @include font-size(16px);
+                                line-height: 40px;
+                                font-weight: 200;
+                                letter-spacing: .5px;
+                                @include media_query("769","max"){
+                                    @include font-size(30px);
+                                    line-height: 70px;
+                                }
+                            }
+                        }
+                        #{$pdpBundleCartSummaryAddBtnImgBlock}{
+                            #{$pdpBundleCartSummaryAddBtnImg}{
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//================== Sidebar Styles ==================//
+
+#{$sidebarModalBlock}{
+    background: #ffffff;
+    max-width: 740px;
+    z-index: 99;
+    @include height_width(100%,100%);
+    @include positioning(fixed,0,0,0,auto);
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-animation-name: slideIn;
+    animation-name: slideIn;
+    -moz-animation-name: slideIn;
+    -o-animation-name: slideIn;
+    -ms-animation-name:slideIn;
+    animation-duration: 0.3s;
+    -webkit-animation-duration: 0.3s;
+    -ms-animation-duration:0.3s;
+    scrollbar-width: thin;
+    @include scrollbars(5px,auto,0px,#ddd);
+    /* Add Animation */
+    @-webkit-keyframes slideIn {
+        from {right: -300px; opacity: 0} 
+        to {right: 0; opacity: 1}
+    }
+    @-moz-keyframes slideIn{
+        from {right: -300px; opacity: 0} 
+        to {right: 0; opacity: 1}
+    }
+    @-ms-keyframes slideIn {
+        from {right: -300px; opacity: 0} 
+        to {right: 0; opacity: 1}
+    }
+    @-o-keyframes slideIn{
+        from {right: -300px; opacity: 0} 
+        to {right: 0; opacity: 1}
+    }
+    @keyframes slideIn {
+        from {right: -300px; opacity: 0}
+        to {right: 0; opacity: 1}
+    }
+    @include media_query("769","max"){
+        max-width: 100%;
+    }
+    // @media only screen and(min-width:420px) and (max-width : 750px) and (orientation: portrait){
+    //     @include positioning(fixed,110px,0,0,auto);
+    // }
+    // @media screen and (min-width: 420px) and (max-width: 750px)  and (orientation: landscape) {
+    //     @include positioning(fixed,0px,0,0,auto);
+    // }
+    @media only screen and (device-width : 411px) and (device-height : 823px) and (-webkit-device-pixel-ratio : 3) and (orientation: portrait) { 
+        @include positioning(fixed,150px,0,0,auto);
+    }
+    @media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) and (orientation: portrait) { 
+        @include positioning(fixed,180px,0,0,auto);
+    }
+    @media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait){
+        @include positioning(fixed,150px,0,0,auto);
+     }
+    #{$sidebarHeaderBlock}{
+        @include flexbox();
+        @include justify-content(space-between);
+        @include padding(10px,0px,10px,0px);
+        @include align-items(center);
+        border-bottom: 1px solid #ddd;
+        background: #fff;
+        z-index: 9;
+        @include positioning(fixed,0,0,auto,auto);
+        -webkit-animation-name: slideIn;
+        animation-name: slideIn;
+        -moz-animation-name: slideIn;
+        -o-animation-name: slideIn;
+        -ms-animation-name:slideIn;
+        animation-duration: 0.3s;
+        -webkit-animation-duration: 0.3s;
+        animation-duration: 0.3s;
+        @include height_width(auto,740px);
+        @include media_query("769","max"){
+            @include height_width(auto,100%);
+            @include padding(20px,0px,20px,0px);
+        }
+        // @media only screen and(min-width:420px) and (max-width : 750px) and (orientation: portrait){
+        //     @include positioning(fixed,109px,0,auto,auto);
+        // }
+        // @media screen and (min-width: 420px) and (max-width: 750px)  and (orientation: landscape) {
+        //     @include positioning(fixed,0,0,auto,auto);
+        // }
+        @media only screen and (device-width : 411px) and (device-height : 823px) and (-webkit-device-pixel-ratio : 3) and (orientation: portrait) { 
+            @include positioning(fixed,149px,0,auto,auto);
+        }
+        @media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) and (orientation: portrait) { 
+            @include positioning(fixed,179Px,0,auto,auto);
+            
+        }
+        @media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait){
+            @include positioning(fixed,149px,0,auto,auto);
+            
+         }
+        #{$sidebarHeaderContinueBlock}{
+            @include flexbox();
+            @include align-items(center);
+            cursor: pointer;
+            @include margin(null,null,null,40px);
+            @include media_query("769","max"){
+                @include margin(null,null,null,40px);
+            }
+            #{$sidebarHeaderContinueImgBlock}{
+                @include padding(0px,5px,0px,0px);
+                #{$sidebarHeaderContinueImg}{
+                    background:transparent url(../img/icon_set.png) -21px 33px;
+                    @include height_width(30px,30px);
+                    background-size:50px; 
+                    transform: rotate(270deg);
+                    @include media_query("769","max"){
+                        background:transparent url(../img/icon_set.png) -30px 47px;
+                        @include height_width(50px,40px);
+                        background-size:70px;  
+                    }
+                }
+            }
+            #{$sidebarHeaderContinueTextBlock}{
+                #{$sidebarHeaderContinueText}{
+                    @include font-size(14px);
+                    font-family: $font-family;
+                    @include media_query("769","max"){
+                        @include font-size(25px);
+                    }
+                }
+            }
+        }
+        #{$sidebarHeaderTitleBlock}{
+            @include media_query("769","max"){
+                display: none;
+            }
+            #{$sidebarHeaderTitleTextBlock}{
+                #{$sidebarHeaderTitleText}{
+                    font-family: $font-family;
+                    @include font-size(14px);
+                }
+            }
+        }
+        #{$sidebarHeaderItemBlock}{
+            @include margin(null,40px,null,null);
+            @include media_query("769","max"){
+                @include margin(null,20px,null,null);
+            }
+            #{$sidebarHeaderItemCountBlock}{
+                @include flexbox();
+                @include align-items(center);
+                cursor: pointer;
+                #{$sidebarHeaderItemCountTitleBlock}{
+                    #{$sidebarHeaderItemCountTitle}{
+                        @include padding(0px,5px,0px,0px);
+                        @include font-size(14px);
+                        font-family: $font-family;
+                        @include media_query("769","max"){
+                            @include padding(0px,10px,0px,0px);
+                            @include font-size(25px);
+                        }
+                    }
+                }
+                #{$sidebarHeaderItemCountTextBlock}{
+                    background: #0199d5;
+                    border-radius: 50%;
+                    @include height_width(23px,23px);
+                    @include flexbox();
+                    @include justify-content(center);
+                    @include align-items(center);
+                    cursor: pointer;
+                    @include media_query("769","max"){
+                        @include height_width(35px,35px);
+                    }
+                    #{$sidebarHeaderItemCountText}{
+                        color: #fff;
+                        font-size: 12px;
+                        font-family: $font-family;
+                        @include media_query("769","max"){
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #{$sidebarCartAddedBlock}{
+        border-bottom: 1px solid #ddd;
+        @include margin(50px,null,null,null);
+        @include media_query("769","max"){
+            @include margin(90px,null,null,null);
+        }
+        #{$sidebarCartAddedProductsBlock}{
+            @include padding(10px, 20px,10px, 20px);
+            @include flexbox;
+            @include justify-content(center);
+            @include align-items(center);
+            // @include media_query("420","max"){
+            //     @include padding(10px, 10px,10px, 10px);
+            // }
+            #{$sidebarCartAddedProductsLeftBlock}{
+                position: relative;
+                @include media_query("769","max"){
+                    display: none;
+                }
+                #{$sidebarCartAddedProductsLeftBtnBlock}{
+                    @include height_width(80px,35px);
+                    @include positioning(absolute,-40px,null,null,-30px);
+                    #{$sidebarCartAddedProductsLeftBtnImgBlock}{
+                        #{$sidebarCartAddedProductsLeftBtnImg}{
+                            cursor: pointer;
+                            @include positioning(absolute,30%,-12px,null,null);
+                            @include height_width(30px,30px);
+                            border-radius: 20px;
+                            background: $secondary_cta url(../img/icon_set.png) 5px -21px;
+                            background-size:35px;
+                            background-repeat: no-repeat; 
+                        }
+                    }
+                }
+            }
+            #{$sidebarCartAddedProductsListBlock}{
+                @include flexbox();
+                @include height_width(auto,650px);
+                overflow: hidden;
+                @include media_query("769","max"){
+                    @include padding(15px,0px,15px,0px);
+                    @include flexbox();
+                    @include justify-content(flex-start);
+                    @include height_width(auto,100%);
+                    overflow-x: auto;
+                }
+                #{$sidebarCartAddedProductBlock}{
+                    @include flexbox();
+                    border: 1px solid #dddddd;
+                    @include margin(0px,5px,0px,5px);
+                    @include padding(2px,5px,2px,10px);
+                    max-width: 46%;
+                    min-width: 46%;
+                    @include height_width(auto,100%);
+                    @include media_query("769","max"){
+                        @include padding(10px,10px,10px,10px);
+                        max-width: 85%;
+                        min-width: 85%;
+                    }
+                    @include media_query("600","max"){
+                        max-width: 90%;
+                        min-width: 90%;
+                    }
+                    @include media_query("420","max"){
+                        max-width: 85%;
+                        min-width: 85%;
+                    }
+                    @include media_query("350","max"){
+                        max-width: 90%;
+                        min-width: 90%;
+                    }
+                    #{$sidebarCartAddedProductImgBlock}{
+                        #{$sidebarCartAddedProductImg}{
+                            @include height_width(auto,90px);
+                            @include margin(0px,10px,0px,0px);
+                            @include media_query("769","max"){
+                                @include height_width(auto,150px);
+
+                            }
+                            img{
+                                @include height_width(100%,100%);
+                                @include padding(2px ,2px,2px,5px);
+                            }
+                        }
+                    }
+                    #{$sidebarCartAddedProductDescBlock}{
+                        #{$sidebarCartAddedProductDescTitleBlock}{
+                            @include height_width(50px,null);
+                            overflow: hidden;
+                            @include media_query("769","max"){
+                                @include height_width(60px,null);
+                                @include padding(null,null,10px,null);
+                            }
+                            #{$sidebarCartAddedProductDescTitle}{
+                                @include font-size(13px);
+                                color: #444;
+                                font-family: $font-family;
+                                font-weight: 300;
+                                @include media_query("1201","max"){
+                                    @include font-size(16px);
+                                }
+                                @include media_query("769","max"){
+                                    @include font-size(25px);
+                                }
+                            }
+                        }
+                        #{$sidebarCartAddedProductDescPriceBlock}{
+                            @include flexbox();
+                            @include align-items(center);
+                            @include padding(7px,0px,0px,0px);
+                            #{$sidebarCartAddedProductDescPriceRegularBlock}{
+                                #{$sidebarCartAddedProductDescPriceRegularTextBlock}{
+                                    #{$sidebarCartAddedProductDescPriceRegularText}{
+                                        text-decoration: line-through;
+                                        @include font-size(14px);
+                                        opacity: 0.8;
+                                        font-family: $font-family;
+                                        @include media_query("769","max"){
+                                            @include font-size(25px);
+                                        }
+                                        @include padding(0px,7px,0px,0px);
+                                    }
+                                }
+                            }
+                            #{$sidebarCartAddedProductDescPriceActiveBlock}{
+                                #{$sidebarCartAddedProductDescPriceActiveTextBlock}{
+                                    #{$sidebarCartAddedProductDescPriceActiveText}{
+                                        @include font-size(19px);
+                                        color: #D7410B;
+                                        font-family: $font-family;
+                                        font-weight: 300;
+                                        @include media_query("769","max"){
+                                            @include font-size(35px);
+                                        }
+                                    }
+                                    #{$sidebarCartAddedProductDescPriceActiveTextMsg}{
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            #{$sidebarCartAddedProductsRightBlock}{
+                position: relative;
+                @include media_query("769","max"){
+                    display: none;
+                }
+                #{$sidebarCartAddedProductsRightBtnBlock}{
+                    @include height_width(80px,35px);
+                    @include positioning(absolute,-40px,-30px,null,null);
+                    #{$sidebarCartAddedProductsRightBtnImgBlock}{
+                        #{$sidebarCartAddedProductsRightBtnImg}{
+                            cursor: pointer;
+                            @include positioning(absolute,30%,null,null,-9px);
+                            @include height_width(30px,30px);
+                            border-radius: 20px;
+                            background: $secondary_cta url(../img/icon_set.png) -11px -21px;
+                            background-size:35px;
+                            background-repeat: no-repeat; 
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #{$sidebarRecommendedBlock}{
+        @include margin(null,null,100px,null);
+        // @media only screen and(min-width:420px) and (max-width : 750px) and (orientation: portrait){
+        //     @include margin(null,null,210px,null);
+        // }
+        // @media screen and (min-width: 420px) and (max-width: 750px)  and (orientation: landscape) {
+        //     @include margin(null,null,100px,null);
+        // }
+        @media only screen and (device-width : 411px) and (device-height : 823px) and (-webkit-device-pixel-ratio : 3) and (orientation: portrait) { 
+            @include margin(null,null,210px,null);
+        }
+        @media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) and (orientation: portrait) { 
+            @include margin(null,null,280px,null);
+        }
+        @media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait){
+            @include margin(null,null,260px,null);
+            
+        }
+        #{$sidebarRecommendedTitleBlock}{
+            #{$sidebarRecommendedTitleTextBlock}{
+                #{$sidebarRecommendedTitleText}{
+                    @include padding(15px,40px,0px,40px);
+                    text-transform: capitalize;
+                    @include font-size(23px);
+                    font-weight: 400;
+                    font-family: $font-family;
+                    @include media_query("769","max"){
+                        @include padding(25px,20px,20px,20px);
+                        @include font-size(35px);
+
+                    }
+                }
+            }
+        }
+        .inc_recommended_items_block{
+            .inc_recommend_all_items_block{
+                #{$sidebarRecommendAllItemsTitleBlock}{
+                    border-bottom: 1px solid #ddd;
+                    @include media_query("769","max"){
+                        border-bottom: none;
+                        @include padding(15px,20px,10px,20px);
+                    }
+                    #{$sidebarRecommendAllItemsTitleTextBlock}{
+                        #{$sidebarRecommendAllItemsTitleText}{
+                            @include padding(15px,40px,10px,40px);
+                            font-weight: bold;
+                            font-family: $font-family;
+                            color: #444;
+                            @include media_query("769","max"){
+                                background:#d8d5d5bd;
+                                opacity: 0.9;
+                                @include padding(20px,35px,20px,35px);
+                                border-radius: 1px;
+                                position: relative;
+                                font-size: 25px;
+                                // &::before{
+                                //     content: '';
+                                //     @include height_width(40px,40px);
+                                //     background: transparent url(../img/icon_set.png) 1px 0px;
+                                //     background-size: 60px;
+                                //     background-repeat: no-repeat;
+                                //     @include positioning(absolute,13px,30px,null,null);
+                                //     cursor: pointer;
+                                // }
+                            }
+                        }
+                    }
+                    #{$sidebarRecommendAllItemsTitleImgBlock}{
+                        #{$sidebarRecommendAllItemsTitleImg}{
+    
+                        }
+                    }
+                }
+                #{$sidebarRecommendAllItemsListingBlock}{
+                    @include flexbox();
+                    @include padding(10px,10px,10px,10px);
+                    position: relative;
+                    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+                        @include padding(10px,5px,10px,5px);
+                    }
+                    @supports (-ms-ime-align: auto) {
+                        @include padding(10px,5px,10px,5px);
+
+                    }
+                    @include media_query("769","max"){
+                        @include padding(10px,20px,10px,20px);
+                        overflow-x: auto;
+                    }
+                    #{$sidebarRecommendItemsListingLeftBlock}{
+                        @include media_query("769","max"){
+                            display: none;
+                        }
+                        #{$sidebarRecommendItemsListingLeftBtnBlock}{
+                            @include positioning(relative,null,null,null,null);
+                            @include height_width(320px,30px);
+                            #{$sidebarRecommendItemsListingLeftBtnImgBlock}{
+                                #{$sidebarRecommendItemsListingLeftBtnImg}{
+                                    cursor: pointer;
+                                    @include height_width(40px,40px);
+                                    @include positioning(absolute,110px, null,null,12px);
+                                    border-radius: 20px;
+                                    background: $secondary_cta url(../img/icon_set.png) 9px -24px;
+                                    z-index: 1;
+                                    background-size: 42px;
+                                    background-repeat: no-repeat;
+                                }
+                            }
+                        }
+                    }
+                    #{$sidebarRecommendItemsListingProductsListBlock}{
+                        @include flexbox();
+                        @include justify-content(flex-start);
+                        overflow: hidden;
+                        @include height_width(auto,655px);
+                        @include media_query("769","max"){
+                            overflow-x: auto;
+                            @include height_width(auto,100%);
+                        }
+                        #{$productBlock}{
+                            border: 1px solid #ddd;
+                            max-width: 189px;
+                            min-width: 189px;
+                            @include height_width(auto, 100%);
+                            @include padding(15px,10px,10px,10px);
+                            @include margin(0px,4px,0px,4px);
+                            position: relative;
+                            @include media_query("769","max"){
+                                max-width: 83%;
+                                min-width: 83%;
+                                @include height_width(auto, auto);
+                                @include flexbox();
+                                @include justify-content(flex-start);
+                                @include margin(0px,20px,0px,0px);
+                                @include padding(20px,10px,20px,10px);
+                            }
+                            #{$productImgBlock}{
+                                #{$productImg}{
+                                    @include height_width(auto, 175px);
+                                    @include media_query("769","max"){
+                                         @include height_width(auto, 250px);
+                                         @include margin(0px,20px,0px,0px);
+                                    }
+                                    @include media_query("480","max"){
+                                        @include height_width(auto, 230px);
+                                    }
+                                    @include media_query("350","max"){
+                                        @include height_width(auto, 200px);
+                                        @include margin(0px,10px,0px,0px);
+                                    }
+                                    @include margin(0,auto,5px,auto);
+                                    img{
+                                        @include height_width(100%,100%);
+                                    }
+                                }
+                            }
+                            #{$productDescBlock}{
+                                @include padding(15px,0px,0px,0px);
+                                @include media_query("769","max"){
+                                    @include padding(0px,0px,0px,0px);
+                                    width: 100%;
+                                }
+                                #{$productTitleBlock}{
+                                    #{$productTitleTextBlock}{
+                                        @include height_width(56px,100%);
+                                        overflow: hidden;
+                                        @include media_query("769","max"){
+                                            @include height_width(77px,100%);
+                                        }
+                                        #{$productTitleText}{
+                                         a{
+                                            @include font-size(14px);
+                                            // line-height:1.4;
+                                            color: #444444;
+                                            font-weight: 300;
+                                            text-decoration: none;
+                                            font-family: $font-family;
+                                            @include media_query("1201","max"){
+                                                @include font-size(16px);
+                                            }
+                                            @include media_query("769","max"){
+                                                @include font-size(25px);
+                                            }
+                                            // &:hover{
+                                            //     text-decoration: underline;
+                                            // }
+                                            // @include media_query("600","max"){
+                                            //      @include font-size(15px);
+                                            // }
+                                            // @include media_query("375","max"){
+                                            //     @include font-size(14px);
+                                            // }
+                                         }
+                                        }   
+                                    }
+                                }
+                                #{$productPriceBlock}{
+                                    @include padding(15px,0px,20px,0px);
+                                    #{$productPriceActiveBlock}{
+                                        #{$productPriceActiveTextBlock}{
+                                            #{$productPriceActiveText}{
+                                                @include font-size(19px);
+                                                color: #D63F0A;
+                                                font-weight: 300;
+                                                font-family: $font-family;
+                                                @include media_query("769","max"){
+                                                    @include font-size(32px);
+                                                }
+                                            }
+                                            #{$productPriceActiveTextMsg}{
+                                                position: absolute;
+                                                background: #822980;
+                                                color: #fff;
+                                                right: 0;
+                                                @include padding(2px,10px,2px,15px);
+                                                bottom: 70px;
+                                                font-weight: 600;
+                                                font-size: 10px;
+                                                @include height_width(30px,80px);
+                                                text-align: right;
+                                                font-family: $font-family;
+                                                &::before{
+                                                    content: '';
+                                                    position: absolute;
+                                                    border-bottom: 39px solid #fff;
+                                                    border-right: 15px solid transparent;
+                                                    left: 0px;
+                                                    @include media_query("1201","max"){
+                                                        left: -1px;
+                                                        top: -1px;
+                                                    }
+                                                    @include media_query("769","max"){
+                                                        border-bottom: 39px solid #fff;
+                                                    }
+                                                }
+                                                span{
+                                                    font-weight: 300 !important;
+                                                }
+                                                @include media_query("769","max"){
+                                                    @include font-size(15px);
+                                                    bottom: 110px;
+                                                    font-weight: 300;
+                                                    @include height_width(30px,120px);
+
+                                                }
+                                               
+                                            }
+                                        }
+                                    }
+                                    #{$productPriceRegularBlock}{
+                                        #{$productPriceRegularTextBlock}{
+                                            @include height_width(16px,null);
+                                            @include media_query("769","max"){
+                                                @include height_width(25px,null);
+                                                @include padding(null,null,5px,null);
+                                            }
+                                            #{$productPriceRegularText}{
+                                                text-decoration: line-through;
+                                                @include font-size(14px);
+                                                // opacity: 0.8;
+                                                color: #666;
+                                                font-family: $font-family;
+                                                @include padding(0px,0px,5px,0px);
+                                                @include media_query("769","max"){
+                                                    @include font-size(25px);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                #{$productAddBlock}{
+                                    cursor: pointer;
+                                    #{$productAddTextBlock}{
+                                        @include height_width(auto,100%);
+                                        background: #D7410B;
+                                        &:hover{
+                                            background:#C1401A;
+                                        }
+                                        #{$productAddText}{
+                                            text-transform: uppercase;
+                                            @include font-size(14px);
+                                            @include text-center(center);
+                                            color: #fff;
+                                            font-weight: 300;
+                                            font-family: $font-family;
+                                            @include padding(7px,0px,7px,0px);
+                                            @include media_query("769","max"){
+                                            @include padding(15px,0px,15px,0px);
+                                            @include font-size(25px);
+                                            }
+                                        }
+                                    }
+                                    #{$productAddImgBlock}{
+                                        #{$productAddImg}{
+                                     
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                   
+                    }
+                    #{$sidebarRecommendItemsListingRightBlock}{
+                        @include media_query("769","max"){
+                            display: none;
+                        }
+                        #{$sidebarRecommendItemsListingRightBtnBlock}{
+                            @include positioning(relative,null,null,null,null);
+                            @include height_width(320px,30px);
+                            #{$sidebarRecommendItemsListingRightBtnImgBlock}{
+                                #{$sidebarRecommendItemsListingRightBtnImg}{
+                                    @include height_width(40px,40px);
+                                    cursor: pointer;
+                                    @include positioning(absolute,110px, 10px, null,null);
+                                    border-radius: 20px;
+                                    background: $secondary_cta url(../img/icon_set.png) -13px -24px;
+                                    z-index: 1;
+                                    background-size: 42px;
+                                    background-repeat: no-repeat;
+                                   
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+         
+        }
+    }   
+    #{$sidebarCheckoutBlock}{
+        @include flexbox();
+        @include padding(20px,0px,20px,0px);
+        @include justify-content(space-between);
+        background: #d8d5d5;
+        z-index: 9;
+        @include positioning(fixed,auto,0,0,auto);
+        -webkit-animation-name: slideIn;
+        animation-name: slideIn;
+        -moz-animation-name: slideIn;
+        -o-animation-name: slideIn;
+        -ms-animation-name:slideIn;
+        animation-duration: 0.3s;
+        -webkit-animation-duration: 0.3s;
+        animation-duration: 0.3s;
+        @include height_width(auto,740px);
+        @include media_query("769","max"){
+            @include height_width(auto,100%);
+            @include padding(0px,0px,0px,0px);
+        }
+      
+        #{$sidebarCheckoutContinueBlock}{
+            @include height_width(40px, 35%);
+            background: $secondary_cta;
+            cursor: pointer;
+            @include flexbox();
+            @include justify-content(center);
+            @include align-items(center);
+            @include margin(null,null,null,45px);
+            @include media_query("769","max"){
+                @include margin(null,null,null,0px);
+                @include height_width(90px, 50%);
+            }
+            #{$sidebarCheckoutContinueBtnBlock}{
+                #{$sidebarCheckoutContinueBtnTextBlock}{
+                    #{$sidebarCheckoutContinueBtnText}{
+                        text-transform: uppercase;
+                        color: #fff;
+                        @include font-size(14px);
+                        font-family: $font-family;
+                        font-weight: 300;
+                        @include media_query("769","max"){
+                            @include font-size(25px);
+                        }
+                        // @include media_query("375","max"){
+                        //     @include font-size(10px);
+                        // }
+                    }
+                }
+                #{$sidebarCheckoutContinueBtnImgBlock}{
+                    #{$sidebarCheckoutContinueBtnImg}{
+
+                    }
+                }
+            }
+        }
+        #{$sidebarCheckoutBasketBlock}{
+            @include height_width(40px, 35%);
+            cursor: pointer;
+            background: #63be51;
+            @include flexbox();
+            @include justify-content(center);
+            @include align-items(center);
+            @include margin(null,45px,null,null);
+            @include media_query("769","max"){
+                @include margin(null,0px,null,null);
+                @include height_width(90px, 50%);
+            }
+            #{$sidebarCheckoutBasketBtnBlock}{
+                height: auto;
+                width: 100%;
+                line-height: 40px;
+                text-align: center;
+                @include media_query("769","max"){
+                    line-height: auto;
+                }
+                #{$sidebarCheckoutBasketBtnTextBlock}{
+                    #{$sidebarCheckoutBasketBtnText}{
+                        text-transform: uppercase;
+                        color: #fff;
+                        @include font-size(14px);
+                        font-family: $font-family;
+                        font-weight: 300;
+                        @include media_query("769","max"){
+                            @include font-size(25px);
+                        }
+                        a{
+                            color: #ffffff;
+                            text-decoration: none;
+                        }
+                        // @include media_query("600","max"){
+                        //     @include font-size(12px);
+                        // }
+                        // @include media_query("375","max"){
+                        //     @include font-size(10px);
+                        // }
+                    }
+                }
+                #{$sidebarCheckoutBasketBtnImgBlock}{
+                    #{$sidebarCheckoutBasketBtnImg}{
+
+                    }
+                }
+            }
+        }
+    }
+    .btn-disable-modal{
+        position: absolute !important;
+        top: 27px !important;
+        right: 0 !important;
+    }
+    
+}
+
+.inc_sidebar_overlay_block{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(73, 71, 71, 0.404);
+    z-index: 70;
+    display: none;
+}
+
+//================== After Modal Styles ==================//
+
+#{$afModalBlock}{
+    max-width: 1050px;
+    @include justify-content(center);
+    @include height_width(auto, 100%);
+    @include margin(10px,auto,30px,auto);
+    @include padding(15px, null, 10px, null);
+    @include media_query("1025", "max"){
+        max-width: 840px;
+    }
+    @include media_query("920", "max"){
+        max-width: 770px;
+    }
+    @include media_query("769", "max"){
+        @include margin(0px,0px,30px,0px);
+        @include padding(10px, null, 10px, null);
+        
+    }
+    #{$afModalTitleBlock}{
+        #{$afModalTitleTextBlock}{
+            #{$afModalTitleText}{
+                @include font-size(18px);
+                @include font-weight(bold);
+                @include padding(auto, auto, 15px, auto);
+                @include media_query("769", "max"){
+                    padding-left: 10px;
+                  }
+            }
+        }
+    }
+    #{$afModalBundlesBlock}{
+        @include positioning(relative,null,null,null,null);
+        @include flexbox();
+        @include align-items(center);
+        @include media_query("769","max"){
+            @include margin(0px,10px,0px,10px);
+        }
+        #{$afLeftBlock}{
+            @include media_query("769","max"){
+                display: none;
+            }
+            #{$afLeftBtnBlock}{
+                #{$afLeftBtnImgBlock}{
+                    #{$afLeftBtnImg}{
+                        @include height_width(40px,40px);
+                        @include positioning(absolute,45px, null,null,-20px);
+                        border-radius: 20px;
+                        background: $secondary_cta url(../img/icon_set.png) 9px -24px;
+                        background-size:42px;
+                        background-repeat: no-repeat;
+                        z-index: 1;
+                        cursor: pointer;
+                        @include media_query("920","max"){
+                            @include positioning(null,45px, null,null,null);
+                        }
+                    }
+                }
+            }
+        }
+        #{$afProductListBlock}{
+            @include flexbox();
+            overflow: hidden;
+            @include media_query("769","max"){
+                overflow-x: auto ;
+                @include height_width(auto , 100%);
+            }
+            #{$productBlock}{
+                max-width: 333px;
+                min-width: 333px;
+                @include height_width(auto,100%);
+                border: 1px solid #ddd;
+                @include padding(10px,15px,10px,20px);
+                @include flexbox();
+                @include align-items(center);
+                position: relative;
+                @include margin(0px,20px,0px,0px);
+                @include media_query("1025", "max"){
+                    max-width: 270px;
+                    min-width: 270px;
+                    @include margin(0px,10px,0px,0px);
+                }
+                @include media_query("920","max"){
+                    max-width: 49%;
+                    min-width: 49%;
+                }
+                @include media_query("769","max"){
+                    @include padding(10px,10px,10px,10px);
+                    min-width: 70%;
+                }
+                @include media_query("600","max"){
+                    min-width: 80%;
+                }
+                @include media_query("420","max"){
+                    min-width: 90%;
+                }
+                @include media_query("375","max"){
+                    min-width: 90%;
+                }
+                #{$productImgBlock}{
+                    #{$productImg}{
+                        @include height_width(auto,100px);
+                        @include margin(0px,10px,0px,0px);
+                        @include media_query("1025", "max"){
+                            @include height_width(auto,90px);
+                        }
+                        @include media_query("920","max"){
+                            @include height_width(auto,130px);
+                        }
+                        @include media_query("769","max"){
+                            @include height_width(auto,120px);
+                            @include margin(0px,15px,0px,0px);
+                        }
+                        @include media_query("420","max"){
+                            @include height_width(auto,100px);
+                        }
+                        @include media_query("350","max"){
+                            @include height_width(auto,90px);
+                        }
+                        img{
+                            @include height_width(100%,100%);
+                        }
+                    }
+                }
+                #{$productDescBlock}{
+                    @include height_width(auto,100%);
+                    @include align-self(flex-start);
+                    #{$productTitleBlock}{
+                        #{$productTitleTextBlock}{
+                            #{$productTitleText}{
+                                @include height_width(60px,100%);
+                                overflow: hidden;
+                                @include media_query("769","max"){
+                                    @include height_width(50px,100%);
+                                }
+                                a{
+                                    @include font-size(16px);
+                                    text-transform: capitalize;
+                                    font-weight: 300;
+                                    color: #444;
+                                    text-decoration: none;
+                                    // @include media_query("1201","max"){
+                                    //     @include font-size(17px);
+                                    // }
+                                    @include media_query("769","max"){
+                                        @include font-size(16px);
+                                    }
+                                    @include media_query("480","max"){
+                                        @include font-size(14px);
+                                    }
+                                    // &:hover{
+                                    //     text-decoration: underline;
+                                    // }
+                                }
+                            }
+                        }
+                    }
+                    #{$productPriceBlock}{
+                        @include padding(5px,0px,15px,0px);
+                        #{$productPriceActiveBlock}{
+                            #{$productPriceActiveTextBlock}{
+                                #{$productPriceActiveText}{
+                                    @include font-size(19px);
+                                    color: #D63F0A;
+                                    font-weight: 300;
+                                    @include media_query("350","max"){
+                                        @include font-size(16px);
+                                    }
+                                }
+                                #{$productPriceActiveTextMsg}{
+                                    position: absolute;
+                                    background: #822980;
+                                    color: #fff;
+                                    right: 0;
+                                    text-align: right;
+                                    @include padding(2px,10px,2px,15px);
+                                    @include height_width(30px,110px);
+                                    @include font-size(11px);
+                                    bottom: 60px;
+                                    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+                                        @include font-size(10px);
+                                    }
+                                    @supports (-ms-ime-align: auto) {
+                                        @include font-size(10px);
+                                    }
+                                    &::before{
+                                        content: '';
+                                        position: absolute;
+                                        border-bottom: 33px solid #fff;
+                                        border-right: 15px solid transparent;
+                                        left: 0px;
+                                    }
+                                    span{
+                                        font-weight: 300 !important;
+                                    }
+                                    @include media_query("769","max"){
+                                        @include font-size(15px);
+                                        font-weight: 300;
+                                        @include height_width(30px,110px);
+                                    }
+                                    @include media_query("420","max"){
+                                        @include font-size(11px);
+                                    }
+                                }
+                            }
+                        }
+                        #{$productPriceRegularBlock}{
+                            #{$productPriceRegularTextBlock}{
+                                @include height_width(15px,null);
+                                overflow: hidden;
+                                @include media_query("769","max"){
+                                    @include height_width(20px,null);
+                                }
+                                #{$productPriceRegularText}{
+                                    text-decoration: line-through;
+                                    @include font-size(14px);
+                                    // opacity: 0.8;
+                                    color: #666;
+                                    @include padding(0px,0px,5px,0px);
+                                    @include media_query("769","max"){
+                                        @include font-size(16px);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    #{$productAddBlock}{
+                        cursor: pointer;
+                        @include height_width(auto,70%);
+                        background: #D7410B;
+                        &:hover{
+                            background:#C1401A;
+                        }
+                        @include media_query("769","max"){
+                            @include height_width(auto,98%);
+                        }
+                        #{$productAddTextBlock}{
+                            #{$productAddText}{
+                                text-transform: uppercase;
+                                @include font-size(12px);
+                                @include text-center(center);
+                                color: #fff;
+                                @include padding(10px,0px,10px,0px);
+                            }
+                        }
+                        #{$productAddImgBlock}{
+                            #{$productAddImg}{
+                               
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #{$afRightBlock}{
+            @include media_query("769","max"){
+                display: none;
+            }
+            #{$afRightBtnBlock}{
+                #{$afRightBtnImgBlock}{
+                    #{$afRightBtnImg}{
+                        @include height_width(37px,37px);
+                        @include positioning(absolute,45px, -8px, null,null);
+                        border-radius: 20px;
+                        background: $secondary_cta url(../img/icon_set.png) -13px -25px;
+                        z-index: 1;
+                        background-size:42px;
+                        background-repeat: no-repeat;
+                        cursor: pointer;
+                        @include media_query("920","max"){
+                            @include positioning(null,45px, -12px,null,null);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .btn-disable-modal{
+        position: absolute !important;
+        top: 7px !important;
+        right: 7px !important;
+    }
+    
+}
+
